@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 12px;
+}
+
+/* ================= LOADER ================= */
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #2a2a2a;
+  border-top: 4px solid #ff0000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= CHAT CONTAINER ================= */
+
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header */
+h2 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* ================= CHAT AREA ================= */
+
+#chat {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Scrollbar (nice touch) */
+#chat::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chat::-webkit-scrollbar-thumb {
+  background: #303030;
+  border-radius: 10px;
+}
+
+/* ================= MESSAGES ================= */
+
+.message {
+  max-width: 85%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* User message */
+.user {
+  align-self: flex-end;
+  background: #3ea6ff;
+  color: #000;
+  border-bottom-right-radius: 4px;
+}
+
+/* Bot message */
+.bot {
+  align-self: flex-start;
+  background: #272727;
+  color: #e5e5e5;
+  border-bottom-left-radius: 4px;
+}
+
+/* ================= INPUT AREA ================= */
+
+.input-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Input */
+input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 20px;
+  border: 1px solid #303030;
+  background: #121212;
+  color: white;
+  font-size: 13px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+/* Button */
+button {
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: none;
+  background: #ff0000;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #cc0000;
+}
+
+/* ================= RESPONSIVENESS ================= */
+
+@media (max-width: 400px) {
+  .container {
+    padding: 8px;
+  }
+
+  .message {
+    font-size: 12px;
+  }
+}
